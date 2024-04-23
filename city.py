@@ -30,3 +30,9 @@ class City:
             actions (List[Action]): The actions that can be taken.
         """
         self.actions.extend(actions)
+
+    def __repr__(self) -> str:
+        return f"City(name={self.name}, latitude={self.latitude}, longitude={self.longitude})"
+    
+    def __str__(self) -> str:
+        return self.name

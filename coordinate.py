@@ -32,5 +32,8 @@ class Coordinate:
             
         return cls(value)
     
+    def __repr__(self) -> str:
+        return f"Coordinate(value={self.value})"
+    
     def __str__(self) -> str:
-        return self.value.__str__
+        return self.value.__str__()
