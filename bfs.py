@@ -38,7 +38,7 @@ class BreadthFirstSearch:
 
         Args:
             start (str): The name of the city to start at.
-            end (str): The name of the city to end at.
+            target (str): The name of the target city to be found.
 
         Returns:
             SearchResult: The result of the BFS search.
