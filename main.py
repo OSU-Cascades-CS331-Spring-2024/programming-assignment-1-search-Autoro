@@ -1,10 +1,15 @@
 import argparse
 from map import Map
+from bfs import Bfs
 
 def main(args):
     map = Map.from_file(args.map_file)
-    print(map)
-    
+
+    bfs = Bfs(map)
+    result = bfs.search("brest", "nice")
+
+    print(result.path)
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("map_file", help="The name of the file containing the map to run searches on.")

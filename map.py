@@ -1,3 +1,4 @@
+import re
 from action import Action
 from city import City
 from coordinate import Coordinate
@@ -5,11 +6,15 @@ from pathlib import Path
 from typing import List, Self
 
 class Map:
+    """
+    Represents a map of cities.
+    """
+
     def __init__(self, cities : List[City]) -> None:
         self.cities = cities
-
+    
     @staticmethod
-    def __parse_actions(action_line : str) -> List[Action]:
+    def __parse_actions__(action_line : str) -> List[Action]:
         """
         Parses the actions portion of a map file line into a collection of actions.
 
@@ -26,12 +31,15 @@ class Map:
         # those pairs and add it to the list.
         actions = []
         for action in zip(parts[::2], parts[1::2]):
-            actions.append(Action(action[0], action[1]))
+            destination = re.sub("va-", "", action[0])
+            cost = int(action[1])
+
+            actions.append(Action(destination, cost))
 
         return actions
 
     @staticmethod
-    def __parse_city(city_line : str) -> City:
+    def __parse_city__(city_line : str) -> City:
         """
         Parses the city portion of a map file line into a city object.
 
@@ -51,7 +59,7 @@ class Map:
         return City(city_name, latitude, longitude)
 
     @staticmethod
-    def __parse_map_line(line : str) -> City:
+    def __parse_map_line__(line : str) -> City:
         """
         Parses a specific map file line into a city and its actions.
 
@@ -64,8 +72,8 @@ class Map:
 
         city_part, action_part = line.strip().split(" --> ")
 
-        city = Map.__parse_city(city_part)
-        actions = Map.__parse_actions(action_part)
+        city = Map.__parse_city__(city_part)
+        actions = Map.__parse_actions__(action_part)
 
         city.add_actions(actions)
         
@@ -91,7 +99,23 @@ class Map:
 
         with open(map_file_path, "r") as file:
             for line in file.readlines():
-                city = Map.__parse_map_line(line)
+                city = Map.__parse_map_line__(line)
                 cities.append(city)
 
         return cls(cities)
+    
+    def get_city(self, name : str) -> City:
+        """
+        Finds the given city in the map.
+
+        Args:
+            name (str): The name of the city to search for.
+            
+        Returns:
+            City: The city if it is found, otherwise None.
+        """
+        for city in self.cities:
+            if city.name == name:
+                return city
+        
+        return None
