@@ -3,7 +3,7 @@ from map import Map
 from search_result import SearchResult
 from typing import Dict, List
 
-class Bfs:
+class BreadthFirstSearch:
     """
     Represent a breadth-first search.
     """
@@ -67,13 +67,13 @@ class Bfs:
                 break
             
             for action in current.actions:
-                destination = self.map.get_city(action.destination)
+                neighbor = self.map.get_city(action.destination)
 
-                if destination not in frontier and destination not in visited:
-                    parents[destination] = current
-                    costs[destination] = costs[current] + action.cost
+                if neighbor not in frontier and neighbor not in visited:
+                    parents[neighbor] = current
+                    costs[neighbor] = costs[current] + action.cost
 
-                    frontier.append(destination)
+                    frontier.append(neighbor)
                     result.explored += 1
             
             visited.append(current)

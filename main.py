@@ -1,11 +1,11 @@
 import argparse
 from map import Map
-from bfs import Bfs
+from bfs import BreadthFirstSearch
 
 def main(args):
     map = Map.from_file(args.map_file)
 
-    bfs = Bfs(map)
+    bfs = BreadthFirstSearch(map)
     result = bfs.search("brest", "nice")
 
     print(result.path)
