@@ -1,6 +1,6 @@
 from city import City
 from enum import Enum
-from map import Map
+from search import Search
 from search_result import SearchResult
 from typing import List
 
@@ -12,14 +12,11 @@ class DlsResult(Enum):
     FAILURE = 1
     CUTOFF = 2
 
-class IterativeDeepeningSearch:
+class IterativeDeepeningSearch(Search):
     """
     Represents an iterative deepening depth-limited search.
     """
 
-    def __init__(self, map : Map) -> None:
-        self.map = map
-    
     def __dls__(self, current : City, target : str, limit : int, visited : List[City], search_result : SearchResult):
         """
         Recursively performs a depth-limited search from the given city for the given target.
