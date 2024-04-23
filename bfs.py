@@ -32,7 +32,7 @@ class BreadthFirstSearch:
 
         return path
     
-    def search(self, start : str, end : str) -> SearchResult:
+    def search(self, start : str, target : str) -> SearchResult:
         """
         Performs a BFS search from the given start city name to the given end city name.
 
@@ -58,7 +58,7 @@ class BreadthFirstSearch:
             current = frontier.pop(0)
             result.expanded += 1
 
-            if current.name == end:
+            if current.name == target:
                 result.success = True
                 result.path = self.__build_path__(current, parents)
                 result.cost = costs[current]

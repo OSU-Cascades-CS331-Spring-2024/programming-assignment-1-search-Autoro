@@ -1,12 +1,13 @@
 import argparse
 from map import Map
 from bfs import BreadthFirstSearch
+from ids import IterativeDeepeningSearch
 
 def main(args):
     map = Map.from_file(args.map_file)
 
-    bfs = BreadthFirstSearch(map)
-    result = bfs.search("brest", "nice")
+    search = IterativeDeepeningSearch(map)
+    result = search.search("brest", "nice")
 
     print(result.path)
 
