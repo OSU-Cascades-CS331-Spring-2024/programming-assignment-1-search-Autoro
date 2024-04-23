@@ -1,3 +1,5 @@
+from typing import Self
+
 class Coordinate:
     """
     Represents either a latitude or longitude coordinate.
@@ -7,7 +9,7 @@ class Coordinate:
         self.value = value
         
     @classmethod
-    def from_dms(cls, degrees : int, minutes : int, seconds : int, hemisphere : str):
+    def from_dms(cls, degrees : int, minutes : int, seconds : int, hemisphere : str) -> Self:
         """
         Create an instance of Coordinate from provided degrees, minutes, seconds, and a heading.
 
