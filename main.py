@@ -177,6 +177,21 @@ def print_stats(results : list[SearchResult]) -> None:
         print(f"Optimal Solutions: {optimal_count}")
         print()
 
+def save_results(file_name : str, results : list[SearchResult]) -> None:
+    """
+    Saves the given results to the given file name.
+
+    Args:
+        file_name (str): The name of the file to save the results in.
+        results (list[SearchResult]): The list of search results to save.
+    """
+    
+    with open(file_name, "w") as file:
+        for i, result in enumerate(results):
+            print(result, file=file)
+            if i < len(results) - 1:
+                print(file=file)
+            
 def main(args):
     map = Map.from_file(args.map_file)
 
@@ -186,6 +201,7 @@ def main(args):
     else:
         results = perform_all_searches(map)
         print_stats(results)
+        save_results("solutions.txt", results)
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
