@@ -78,36 +78,19 @@ def perform_all_searches(map : Map) -> List[SearchResult]:
         
     return results
 
-def print_result(result : SearchResult) -> None:
-    """
-    Prints the result of a search to the console.
-
-    Args:
-        result (SearchResult): The search result that will be printed.
-    """
-
-    print(f"{result.start} -> {result.target}")
-    print(f"Method: {result.method}")
-    print(f"Result: { 'Success' if result.success else 'Failure'}")
-    print(f"Path: {', '.join([c.name for c in result.path])}")
-    print(f"Cost: {result.cost}")
-    print(f"Explored: {result.explored}")
-    print(f"Expanded: {result.expanded}")
-    print(f"Maintained: {result.maintained}")
-    print()
-    
 def main(args):
     map = Map.from_file(args.map_file)
 
     if args.start and args.target:
         result = perform_search(args.search, args.start, args.target, map)
 
-        print_result(result)
+        print(result)
     else:
         results = perform_all_searches(map)
 
         for result in results:
-            print_result(result)
+            print(result)
+            print()
 
 
 if __name__ == "__main__":
