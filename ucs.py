@@ -3,7 +3,22 @@ from search import Search
 from search_result import SearchResult
 
 class UniformCostSearch(Search):
+    """
+    Represents a uniform-cost search.
+    """
+
     def search(self, start : str, target : str) -> SearchResult:
+        """
+        Performs a uniform-cost search from the given start city until the given target city is found.
+
+        Args:
+            start (str): The name of the city to start at.
+            target (str): The name of the target city to be found.
+
+        Returns:
+            SearchResult: The result of the A* search.
+        """
+
         start_city = self.map.get_city(start)
 
         frontier = [ start_city]
