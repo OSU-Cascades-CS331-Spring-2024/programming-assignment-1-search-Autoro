@@ -34,7 +34,7 @@ class Map:
             destination = re.sub("va-", "", action[0])
             cost = int(action[1])
 
-            actions.append(Action(destination, cost))
+            actions.append(Action(destination.lower(), cost))
 
         return actions
 
@@ -56,7 +56,7 @@ class Map:
         latitude = Coordinate.from_dms(lat_degrees, lat_minutes, lat_seconds, lat_heading)
         longitude = Coordinate.from_dms(long_degrees, long_minutes, long_seconds, long_heading)
 
-        return City(city_name, latitude, longitude)
+        return City(city_name.lower(), latitude, longitude)
 
     @staticmethod
     def __parse_map_line__(line : str) -> City:

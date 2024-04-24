@@ -185,7 +185,7 @@ def save_results(file_name : str, results : list[SearchResult]) -> None:
         file_name (str): The name of the file to save the results in.
         results (list[SearchResult]): The list of search results to save.
     """
-    
+
     with open(file_name, "w") as file:
         for i, result in enumerate(results):
             print(result, file=file)
@@ -206,9 +206,9 @@ def main(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("map_file", help="The name of the file containing the map to run searches on.")
-    parser.add_argument("-S", "--search", default="bfs", choices=["bfs",  "dls", "ucs", "astar"], help="The search method to perform on the map.")
-    parser.add_argument("-A", "--start", help="The start of the search.")
-    parser.add_argument("-B", "--target", help="The target of the search.")
+    parser.add_argument("-S", "--search", type=str.lower, default="bfs", choices=["bfs",  "dls", "ucs", "astar"], help="The search method to perform on the map.")
+    parser.add_argument("-A", "--start", type=str.lower, help="The start of the search.")
+    parser.add_argument("-B", "--target", type=str.lower, help="The target of the search.")
 
     args = parser.parse_args()
 
