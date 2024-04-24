@@ -6,7 +6,7 @@ class Search:
     """
     Represents a search that can be performed on a map of cities.
     """
-    
+
     def __init__(self, map : Map) -> None:
         self.map = map
 
@@ -30,3 +30,25 @@ class Search:
             path.insert(0, current)
 
         return path
+    
+    def __pop_next_lowest_cost__(self, frontier : List[City], costs : Dict[City, int]) -> City:
+        """
+        Pops the next lowest path cost city from the frontier.
+
+        Args:
+            frontier (List[City]): The current frontier to pop a city from.
+            costs (Dict[City, int]): A dictionary containing the total path cost to a given city.
+
+        Returns:
+            City: The next lowest path cost cost city.
+        """
+
+        min_index = 0
+
+        for i in range(1, len(frontier)):
+            city = frontier[i]
+            
+            if costs[city] < costs[frontier[min_index]]:
+                min_index = i
+
+        return frontier.pop(min_index)

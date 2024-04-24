@@ -2,11 +2,13 @@ import argparse
 from map import Map
 from bfs import BreadthFirstSearch
 from ids import IterativeDeepeningSearch
+from ucs import UniformCostSearch
+
 
 def main(args):
     map = Map.from_file(args.map_file)
 
-    search = IterativeDeepeningSearch(map)
+    search = UniformCostSearch(map)
     result = search.search("brest", "nice")
 
     print(result.path)
