@@ -8,6 +8,8 @@ class Astar(Search):
     Represents an A* search.
     """
 
+    name = "astar"
+
     # Source: https://stackoverflow.com/questions/4913349/haversine-formula-in-python-bearing-and-distance-between-two-gps-points
     def __calculate_distance__(self, current : City, target : City, in_miles : bool = False) -> float:
         """
@@ -37,7 +39,7 @@ class Astar(Search):
 
         return r * c
             
-    def search(self, start : str, target : str) -> SearchResult:
+    def perform(self, start : str, target : str) -> SearchResult:
         """
         Performs an A* search from the given start city until the given target city is found.
 
@@ -57,7 +59,7 @@ class Astar(Search):
         costs = { start_city: 0 }
         estimated_costs = { start_city: self.__calculate_distance__(start_city, target_city) }
 
-        result = SearchResult(explored=1)
+        result = SearchResult("dls", start, target, explored=1)
 
         while frontier:
             current = self.__pop_next_lowest_cost__(frontier, estimated_costs)

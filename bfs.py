@@ -5,8 +5,10 @@ class BreadthFirstSearch(Search):
     """
     Represent a breadth-first search.
     """
+
+    name = "bfs"
     
-    def search(self, start : str, target : str) -> SearchResult:
+    def perform(self, start : str, target : str) -> SearchResult:
         """
         Performs a breadth-first search from the given start city until the given target city is found.
 
@@ -26,7 +28,7 @@ class BreadthFirstSearch(Search):
         costs = { start_city: 0 }
 
         # explored=1 because the start_city starts in the frontier.
-        result = SearchResult(explored=1)
+        result = SearchResult("bfs", start, target, explored=1)
 
         while frontier:
             current = frontier.pop(0)

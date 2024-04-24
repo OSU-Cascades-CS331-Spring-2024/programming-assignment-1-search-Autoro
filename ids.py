@@ -17,6 +17,8 @@ class IterativeDeepeningSearch(Search):
     Represents an iterative deepening depth-limited search.
     """
 
+    name = "dls"
+
     def __dls__(self, current : City, target : str, limit : int, visited : List[City], search_result : SearchResult):
         """
         Recursively performs a depth-limited search from the given city for the given target.
@@ -74,7 +76,7 @@ class IterativeDeepeningSearch(Search):
         # If a cutoff occured, indicate so. Otherwise this path and been fully explored without finding the target.
         return DlsResult.CUTOFF if cutoff_occured else DlsResult.FAILURE
 
-    def search(self, start : str, target : str) -> SearchResult:
+    def perform(self, start : str, target : str) -> SearchResult:
         """
         Performs an iterative deepening depth-limited search from the given start city until the given target city is found.
         
@@ -88,7 +90,7 @@ class IterativeDeepeningSearch(Search):
         
         start_city = self.map.get_city(start)
 
-        search_result = SearchResult()
+        search_result = SearchResult("dls", start, target)
 
         max_depth = 0
         while self.__dls__(start_city, target, max_depth, [], search_result) == DlsResult.CUTOFF:

@@ -7,7 +7,9 @@ class UniformCostSearch(Search):
     Represents a uniform-cost search.
     """
 
-    def search(self, start : str, target : str) -> SearchResult:
+    name = "ucs"
+    
+    def perform(self, start : str, target : str) -> SearchResult:
         """
         Performs a uniform-cost search from the given start city until the given target city is found.
 
@@ -25,8 +27,8 @@ class UniformCostSearch(Search):
         parents = { start_city: None }
         costs = { start_city: 0 }
 
-        result = SearchResult(explored=1)
-        
+        result = SearchResult("ucs", start, target, explored=1)
+
         while frontier:
             current = self.__pop_next_lowest_cost__(frontier, costs)
             result.expanded += 1

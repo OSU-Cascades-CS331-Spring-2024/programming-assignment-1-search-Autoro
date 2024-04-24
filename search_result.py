@@ -4,6 +4,9 @@ from typing import List
 
 @dataclass
 class SearchResult:
+    method : str
+    start : str
+    target : str
     success : bool = field(default=False)
     path : List[City] = field(default=None)
     cost : int = field(default=0)
