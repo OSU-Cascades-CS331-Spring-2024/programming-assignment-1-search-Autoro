@@ -21,7 +21,7 @@ Average Maintained: 1.9
 Optimal Solutions: 2
 ```
 
-Breadth-first search performed about as expected. It it explored and expanded most nodes in the search space without maintaining many in the frontier when finished. It also managed to find a couple optimal solutions.
+Breadth-first search performed about as expected. It it explored and expanded most cities in the map without maintaining many in the frontier when finished. It also managed to find a couple optimal solutions.
 
 ```
 Method: dls
@@ -31,7 +31,7 @@ Average Maintained: 59.2
 Optimal Solutions: 0
 ```
 
-Iterative deeepening depth-limited search by far performed the worst. I suspect, due to the high number of actions that could be taken at each city, IDDLS's ability to find a solution quickly was greatly hindered. The likely high number of iterations it had to perform caused its average explored, expanded, and maintained stats to be incredibly high. It also never found an optimal solution.
+Iterative deeepening depth-limited search was by far the worst performer. IDDLS's ability to find a solution was likely hindered by the high number of actions that could be taken at each city. This probably caused it to perform many iterations before it found the target. As a result, its average explored, expanded, and maintained stats were considerably higher than the other searches. It also never found an optimal solution.
 
 ```
 Method: ucs
@@ -49,7 +49,7 @@ Average Expanded: 9.8
 Average Maintained: 5.2
 Optimal Solutions: 7
 ```
-A*'s stats are overall much better than the other searches. While it discovered most cities in the map, it had to expand considerably less to find a solution. This meant that it had more nodes left unexpanded in its frontier. As a big surprise to me in the end, A* did not find the most optimal solutions. I expected it to be tied with UCS, but it seems to have failed on one search.
+A*'s stats are overall much better than the other searches. While it discovered most cities in the map, it had to expand considerably less to find a solution. This meant that it had more nodes left unexpanded in its frontier. Surprisingly, A* did not find the most optimal solutions. I expected there to be a tie between A* and UCS, but A* seems to have failed to find an optimal search in one case.
 
 ## Summary
-A* not being the most optimal search algorithm for this assignment was surprising. However, after checking some of the coordinates for cities in the map, I suspect it's due to the coordinates being considerably off (e.g. the coordinates for Brest point to the middle of the ocean). Since A* is an informed search, it relied on those coordinates to be accurate to perform optimally.
+A* not being the most optimal search algorithm for this assignment was surprising. However, after checking some of the coordinates for cities in the map, I suspect it's due to some, if not all, the coordinates being considerably off (e.g. the coordinates for Brest point to the middle of the ocean). Since A* is an informed search, it relies on those coordinates being accurate to perform optimally.
