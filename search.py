@@ -1,6 +1,5 @@
 from city import City
 from map import Map
-from typing import Dict, List
 
 class Search:
     """
@@ -10,7 +9,7 @@ class Search:
     def __init__(self, map : Map) -> None:
         self.map = map
 
-    def __build_path__(self, current : City, parents : Dict[City, City]) -> List[City]:
+    def __build_path__(self, current : City, parents : dict[City, City]) -> list[City]:
         """
         Builds a path from the start of the search to the specified current city.
 
@@ -31,13 +30,13 @@ class Search:
 
         return path
     
-    def __pop_next_lowest_cost__(self, frontier : List[City], costs : Dict[City, int]) -> City:
+    def __pop_next_lowest_cost__(self, frontier : list[City], costs : dict[City, int]) -> City:
         """
         Pops the next lowest path cost city from the frontier.
 
         Args:
-            frontier (List[City]): The current frontier to pop a city from.
-            costs (Dict[City, int]): A dictionary containing the total path cost to a given city.
+            frontier (list[City]): The current frontier to pop a city from.
+            costs (dict[City, int]): A dictionary containing the total path cost to a given city.
 
         Returns:
             City: The next lowest path cost cost city.

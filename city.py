@@ -1,6 +1,5 @@
 from action import Action
 from coordinate import Coordinate
-from typing import List
 
 class City:
     """
@@ -22,12 +21,12 @@ class City:
         """
         self.actions.append(action)
 
-    def add_actions(self, actions : List[Action]):
+    def add_actions(self, actions : list[Action]):
         """
         Adds multiple actions to the list of actions that can be taken from a city.
 
         Args:
-            actions (List[Action]): The actions that can be taken.
+            actions (list[Action]): The actions that can be taken.
         """
         self.actions.extend(actions)
     

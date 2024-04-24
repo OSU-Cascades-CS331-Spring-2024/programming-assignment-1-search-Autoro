@@ -3,7 +3,7 @@ from city import City
 from search import Search
 from search_result import SearchResult
 
-class Astar(Search):
+class AstarSearch(Search):
     """
     Represents an A* search.
     """
@@ -59,7 +59,7 @@ class Astar(Search):
         costs = { start_city: 0 }
         estimated_costs = { start_city: self.__calculate_distance__(start_city, target_city) }
 
-        result = SearchResult(Astar.name, start, target, explored=1)
+        result = SearchResult(AstarSearch.name, start, target, explored=1)
 
         while frontier:
             current = self.__pop_next_lowest_cost__(frontier, estimated_costs)

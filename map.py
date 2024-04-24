@@ -3,18 +3,18 @@ from action import Action
 from city import City
 from coordinate import Coordinate
 from pathlib import Path
-from typing import List, Self
+from typing import Self
 
 class Map:
     """
     Represents a map of cities.
     """
 
-    def __init__(self, cities : List[City]) -> None:
+    def __init__(self, cities : list[City]) -> None:
         self.cities = cities
     
     @staticmethod
-    def __parse_actions__(action_line : str) -> List[Action]:
+    def __parse_actions__(action_line : str) -> list[Action]:
         """
         Parses the actions portion of a map file line into a collection of actions.
 
@@ -22,7 +22,7 @@ class Map:
             action_line (str): The string containing the actions that can be taken from a city.
 
         Returns:
-            List[Action]: The collection of initialized action objects.
+            list[Action]: The collection of initialized action objects.
         """
 
         parts = action_line.split()

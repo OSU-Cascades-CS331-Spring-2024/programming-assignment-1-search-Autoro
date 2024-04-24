@@ -2,7 +2,6 @@ from city import City
 from enum import Enum
 from search import Search
 from search_result import SearchResult
-from typing import List
 
 class DlsResult(Enum):
     """
@@ -19,7 +18,7 @@ class IterativeDeepeningSearch(Search):
 
     name = "dls"
 
-    def __dls__(self, current : City, target : str, limit : int, visited : List[City], search_result : SearchResult):
+    def __dls__(self, current : City, target : str, limit : int, visited : list[City], search_result : SearchResult):
         """
         Recursively performs a depth-limited search from the given city for the given target.
 
@@ -27,7 +26,7 @@ class IterativeDeepeningSearch(Search):
             current (City): The current city to perform the search from.
             target (str): The name of the target city to be found.
             limit (int): The current depth limit. The method will return if the limit is 0.
-            visited (List[City]): The list of cities visited so far so that cycles can be avoided.
+            visited (list[City]): The list of cities visited so far so that cycles can be avoided.
             search_result (SearchResult): The accumulative results of the search through all recursions.
         
         Returns:

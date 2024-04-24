@@ -1,17 +1,16 @@
 import argparse
 from map import Map
-from astar import Astar
+from astar import AstarSearch
 from bfs import BreadthFirstSearch
 from ids import IterativeDeepeningSearch
 from ucs import UniformCostSearch
 from search_result import SearchResult
-from typing import List
 
 search_methods = {
     BreadthFirstSearch.name: BreadthFirstSearch,
     IterativeDeepeningSearch.name: IterativeDeepeningSearch,
     UniformCostSearch.name: UniformCostSearch,
-    Astar.name: Astar
+    AstarSearch.name: AstarSearch
 }
 
 default_queries = [
@@ -57,7 +56,7 @@ def perform_search(search_method : str, start : str, target : str, map : Map) ->
     
     return search.perform(start, target)
 
-def perform_all_searches(map : Map) -> List[SearchResult]:
+def perform_all_searches(map : Map) -> list[SearchResult]:
     """
     Performs all possible search methods for each of the default search queries.
 
@@ -65,7 +64,7 @@ def perform_all_searches(map : Map) -> List[SearchResult]:
         map (Map): The name containing all the cities to search through.
 
     Returns:
-        List[SearchResult]: The results of every search that was performed.
+        list[SearchResult]: The results of every search that was performed.
     """
 
     results = []
@@ -144,7 +143,7 @@ def compute_optimals(results : list[SearchResult]) -> dict[str, int]:
         BreadthFirstSearch.name: bfs_optimal,
         IterativeDeepeningSearch.name: dls_optimal,
         UniformCostSearch.name: ucs_optimal,
-        Astar.name: astar_optimal
+        AstarSearch.name: astar_optimal
     }
 
 def print_stats(results : list[SearchResult]) -> None:
@@ -161,7 +160,7 @@ def print_stats(results : list[SearchResult]) -> None:
         BreadthFirstSearch.name: [r for r in results if r.method == BreadthFirstSearch.name],
         IterativeDeepeningSearch.name: [r for r in results if r.method == IterativeDeepeningSearch.name],
         UniformCostSearch.name: [r for r in results if r.method == UniformCostSearch.name],
-        Astar.name: [r for r in results if r.method == Astar.name]
+        AstarSearch.name: [r for r in results if r.method == AstarSearch.name]
     }
 
     optimal_results = compute_optimals(results)
