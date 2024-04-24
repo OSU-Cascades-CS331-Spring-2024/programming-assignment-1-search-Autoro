@@ -28,7 +28,7 @@ class BreadthFirstSearch(Search):
         costs = { start_city: 0 }
 
         # explored=1 because the start_city starts in the frontier.
-        result = SearchResult("bfs", start, target, explored=1)
+        result = SearchResult(BreadthFirstSearch.name, start, target, explored=1)
 
         while frontier:
             current = frontier.pop(0)

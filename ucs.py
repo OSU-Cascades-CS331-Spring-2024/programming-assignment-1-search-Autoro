@@ -27,7 +27,7 @@ class UniformCostSearch(Search):
         parents = { start_city: None }
         costs = { start_city: 0 }
 
-        result = SearchResult("ucs", start, target, explored=1)
+        result = SearchResult(UniformCostSearch.name, start, target, explored=1)
 
         while frontier:
             current = self.__pop_next_lowest_cost__(frontier, costs)

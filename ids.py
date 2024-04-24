@@ -90,7 +90,7 @@ class IterativeDeepeningSearch(Search):
         
         start_city = self.map.get_city(start)
 
-        search_result = SearchResult("dls", start, target)
+        search_result = SearchResult(IterativeDeepeningSearch.name, start, target)
 
         max_depth = 0
         while self.__dls__(start_city, target, max_depth, [], search_result) == DlsResult.CUTOFF:
