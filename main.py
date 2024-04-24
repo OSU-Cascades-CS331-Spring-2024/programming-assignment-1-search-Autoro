@@ -3,12 +3,12 @@ from map import Map
 from bfs import BreadthFirstSearch
 from ids import IterativeDeepeningSearch
 from ucs import UniformCostSearch
-
+from astar import Astar
 
 def main(args):
     map = Map.from_file(args.map_file)
 
-    search = UniformCostSearch(map)
+    search = Astar(map)
     result = search.search("brest", "nice")
 
     print(result.path)
