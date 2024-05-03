@@ -1,0 +1,287 @@
+brest -> nice
+Method: bfs
+Result: Success
+Path: brest, rennes, paris, dijon, lyon, avignon, marseille, nice
+Cost: 1633
+Explored: 18
+Expanded: 18
+Maintained: 0
+
+montpellier -> calais
+Method: bfs
+Result: Success
+Path: montpellier, toulouse, limoges, paris, calais
+Cost: 1224
+Explored: 18
+Expanded: 16
+Maintained: 2
+
+strasbourg -> bordeaux
+Method: bfs
+Result: Success
+Path: strasbourg, dijon, lyon, limoges, bordeaux
+Cost: 1160
+Explored: 18
+Expanded: 15
+Maintained: 3
+
+paris -> grenoble
+Method: bfs
+Result: Success
+Path: paris, dijon, lyon, grenoble
+Cost: 625
+Explored: 16
+Expanded: 14
+Maintained: 2
+
+brest -> grenoble
+Method: bfs
+Result: Success
+Path: brest, rennes, paris, dijon, lyon, grenoble
+Cost: 1214
+Explored: 16
+Expanded: 14
+Maintained: 2
+
+grenoble -> brest
+Method: bfs
+Result: Success
+Path: grenoble, lyon, limoges, nantes, rennes, brest
+Cost: 1198
+Explored: 18
+Expanded: 18
+Maintained: 0
+
+nice -> nantes
+Method: bfs
+Result: Success
+Path: nice, marseille, avignon, lyon, limoges, nantes
+Cost: 1262
+Explored: 14
+Expanded: 11
+Maintained: 3
+
+caen -> strasbourg
+Method: bfs
+Result: Success
+Path: caen, calais, nancy, strasbourg
+Cost: 989
+Explored: 13
+Expanded: 10
+Maintained: 3
+
+brest -> nice
+Method: dls
+Result: Success
+Path: brest, rennes, caen, calais, nancy, strasbourg, dijon, lyon, grenoble, avignon, marseille, nice
+Cost: 2577
+Explored: 196
+Expanded: 161
+Maintained: 81
+
+montpellier -> calais
+Method: dls
+Result: Success
+Path: montpellier, avignon, grenoble, lyon, limoges, paris, calais
+Cost: 1529
+Explored: 90
+Expanded: 62
+Maintained: 56
+
+strasbourg -> bordeaux
+Method: dls
+Result: Success
+Path: strasbourg, dijon, strasbourg, nancy, paris, limoges, bordeaux
+Cost: 1785
+Explored: 102
+Expanded: 67
+Maintained: 63
+
+paris -> grenoble
+Method: dls
+Result: Success
+Path: paris, calais, nancy, strasbourg, dijon, lyon, grenoble
+Cost: 1575
+Explored: 129
+Expanded: 89
+Maintained: 71
+
+brest -> grenoble
+Method: dls
+Result: Success
+Path: brest, rennes, caen, calais, nancy, strasbourg, dijon, lyon, grenoble
+Cost: 2055
+Explored: 114
+Expanded: 89
+Maintained: 60
+
+grenoble -> brest
+Method: dls
+Result: Success
+Path: grenoble, avignon, grenoble, lyon, limoges, toulouse, bordeaux, nantes, rennes, brest
+Cost: 2203
+Explored: 169
+Expanded: 131
+Maintained: 76
+
+nice -> nantes
+Method: dls
+Result: Success
+Path: nice, marseille, avignon, grenoble, lyon, limoges, nantes
+Cost: 1363
+Explored: 58
+Expanded: 43
+Maintained: 38
+
+caen -> strasbourg
+Method: dls
+Result: Success
+Path: caen, calais, nancy, strasbourg
+Cost: 989
+Explored: 32
+Expanded: 18
+Maintained: 29
+
+brest -> nice
+Method: ucs
+Result: Success
+Path: brest, rennes, nantes, bordeaux, toulouse, montpellier, avignon, marseille, nice
+Cost: 1589
+Explored: 18
+Expanded: 18
+Maintained: 0
+
+montpellier -> calais
+Method: ucs
+Result: Success
+Path: montpellier, avignon, lyon, dijon, paris, calais
+Cost: 1131
+Explored: 18
+Expanded: 17
+Maintained: 1
+
+strasbourg -> bordeaux
+Method: ucs
+Result: Success
+Path: strasbourg, nancy, paris, limoges, bordeaux
+Cost: 1123
+Explored: 18
+Expanded: 18
+Maintained: 0
+
+paris -> grenoble
+Method: ucs
+Result: Success
+Path: paris, dijon, lyon, grenoble
+Cost: 625
+Explored: 15
+Expanded: 13
+Maintained: 2
+
+brest -> grenoble
+Method: ucs
+Result: Success
+Path: brest, rennes, nantes, limoges, lyon, grenoble
+Cost: 1197
+Explored: 16
+Expanded: 15
+Maintained: 1
+
+grenoble -> brest
+Method: ucs
+Result: Success
+Path: grenoble, lyon, limoges, nantes, rennes, brest
+Cost: 1198
+Explored: 18
+Expanded: 18
+Maintained: 0
+
+nice -> nantes
+Method: ucs
+Result: Success
+Path: nice, marseille, avignon, montpellier, toulouse, bordeaux, nantes
+Cost: 1232
+Explored: 17
+Expanded: 14
+Maintained: 3
+
+caen -> strasbourg
+Method: ucs
+Result: Success
+Path: caen, paris, nancy, strasbourg
+Cost: 759
+Explored: 13
+Expanded: 11
+Maintained: 2
+
+brest -> nice
+Method: astar
+Result: Success
+Path: brest, rennes, nantes, bordeaux, toulouse, montpellier, avignon, marseille, nice
+Cost: 1589
+Explored: 18
+Expanded: 17
+Maintained: 1
+
+montpellier -> calais
+Method: astar
+Result: Success
+Path: montpellier, avignon, lyon, dijon, paris, calais
+Cost: 1131
+Explored: 15
+Expanded: 8
+Maintained: 7
+
+strasbourg -> bordeaux
+Method: astar
+Result: Success
+Path: strasbourg, nancy, paris, limoges, bordeaux
+Cost: 1123
+Explored: 17
+Expanded: 12
+Maintained: 5
+
+paris -> grenoble
+Method: astar
+Result: Success
+Path: paris, dijon, lyon, grenoble
+Cost: 625
+Explored: 14
+Expanded: 6
+Maintained: 8
+
+brest -> grenoble
+Method: astar
+Result: Success
+Path: brest, rennes, nantes, limoges, lyon, grenoble
+Cost: 1197
+Explored: 16
+Expanded: 11
+Maintained: 5
+
+grenoble -> brest
+Method: astar
+Result: Success
+Path: grenoble, lyon, limoges, nantes, rennes, brest
+Cost: 1198
+Explored: 17
+Expanded: 9
+Maintained: 8
+
+nice -> nantes
+Method: astar
+Result: Success
+Path: nice, marseille, avignon, montpellier, toulouse, limoges, nantes
+Cost: 1250
+Explored: 14
+Expanded: 10
+Maintained: 4
+
+caen -> strasbourg
+Method: astar
+Result: Success
+Path: caen, paris, nancy, strasbourg
+Cost: 759
+Explored: 9
+Expanded: 5
+Maintained: 4

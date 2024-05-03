@@ -1,0 +1,18 @@
+nice 43 43 12 N 7 15 59 E --> va-marseille 197
+toulouse 43 35 16 N 1 26 38 E --> va-montpellier 242 va-bordeaux 243 va-limoges 291
+limoges 44 51 7 N 1 15 45 E --> va-lyon 409 va-toulouse 292 va-bordeaux 221 va-nantes 320 va-paris 394
+nancy 49 41 37 N 6 11 5 E --> va-strasbourg 160 va-dijon 212 va-paris 348 va-calais 479
+dijon 46 19 0 N 5 1 0 E --> va-strasbourg 331 va-lyon 196 va-paris 313 va-nancy 212
+strasbourg 47 35 0 N 7 45 0 E --> va-dijon 331 va-nancy 160
+caen 50 11 0 N 0 22 0 W --> va-calais 350 va-paris 251 va-rennes 185
+lyon 46 46 0 N 4 50 0 E --> va-grenoble 114 va-avignon 231 va-limoges 412 va-dijon 196
+rennes 47 6 53 N 1 40 46 W --> va-caen 183 va-paris 347 va-brest 242 va-nantes 112
+montpellier 42 36 43 N 3 52 38 E --> va-avignon 96 va-toulouse 244
+grenoble 44 10 18 N 5 43 21 E --> va-avignon 220 va-lyon 112
+avignon 42 57 0 N 4 49 0 E --> va-grenoble 220 va-marseille 102 va-montpellier 96 va-lyon 231
+nantes 47 50 5 N 1 33 10 W --> va-limoges 320 va-bordeaux 350 va-rennes 112
+paris 48 51 24 N 2 21 3 E --> va-calais 295 va-nancy 348 va-dijon 315 va-limoges 394 va-rennes 349 va-caen 251
+marseille 42 17 47 N 5 22 12 E --> va-nice 200 va-avignon 102
+bordeaux 43 35 14 N 5 8 7 E --> va-limoges 221 va-toulouse 245 va-nantes 350
+calais 51 30 53 N 1 51 23 E --> va-nancy 479 va-paris 295 va-caen 350
+brest 48 23 0 N 5 29 0 W --> va-rennes 242
